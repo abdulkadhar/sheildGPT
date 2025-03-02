@@ -25,3 +25,13 @@ Visualizes network metrics for better interpretation.
 
 **Exportable Reports:**
 Generates detailed analytics reports in multiple formats (PDF).
+
+## Tickets and details
+
+_**SGPT-7**_
+
+- Design finalization for the login screen.
+- Design reference
+  - [Design one](https://dribbble.com/shots/12069840-Hotspot-System-Login-Page)
+  - [Design two](https://dribbble.com/shots/5059058-The-Glyph-Login-Form)
+  - [Design three](https://dribbble.com/shots/17682332-Creative-Login-Form-Design) - **Final**
