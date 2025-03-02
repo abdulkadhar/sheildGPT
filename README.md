@@ -1,16 +1,37 @@
-# shield_gpt
+# Shield GPT
 
-A new Flutter project.
+The Shield GPT PCAP Analytics Tool is a software application designed to analyze packet capture (PCAP) files for network anomalies, security risks, and essential path metrics. The tool provides insights into network traffic patterns, performance bottlenecks, and security vulnerabilities by processing PCAP files and extracting key data points.
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+**vulnerability Detection:**
+Identifies unusual network behaviors, anomalies, and irregular traffic patterns.
 
-A few resources to get you started if this is your first Flutter project:
+**Basic Path Metrics:**
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- Packet loss analysis
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Latency measurement
+
+- Jitter calculation
+
+- Throughput estimation
+
+**Protocol Analysis:**
+Extracts and categorizes network traffic based on protocols.
+
+**Graphical Representation:**
+Visualizes network metrics for better interpretation.
+
+**Exportable Reports:**
+Generates detailed analytics reports in multiple formats (PDF).
+
+## Tickets and details
+
+_**SGPT-7**_
+
+- Design finalization for the login screen.
+- Design reference
+  - [Design one](https://dribbble.com/shots/12069840-Hotspot-System-Login-Page)
+  - [Design two](https://dribbble.com/shots/5059058-The-Glyph-Login-Form)
+  - [Design three](https://dribbble.com/shots/17682332-Creative-Login-Form-Design) - **Final**
