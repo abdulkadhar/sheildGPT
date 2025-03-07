@@ -26,17 +26,65 @@ class LoginScreen extends StatelessWidget {
                         style: GoogleFonts.quicksand(
                           color: Colors.white,
                           fontSize: 22,
-                          fontWeight: FontWeight.w300,
+                          fontWeight: FontWeight.w100,
                         ),
                       ),
                       const SizedBox(
                         height: 50,
                       ),
                       SgptTextFormField(
-                        isPassword: true,
                         labelText: 'Email',
-                        errorText: 'Error',
-                      )
+                        onChanged: (emailValue) {},
+                      ),
+                      const SizedBox(
+                        height: 30,
+                      ),
+                      SgptTextFormField(
+                        labelText: 'Password',
+                        isPassword: true,
+                        onChanged: (passwordValue) {},
+                      ),
+                      const SizedBox(
+                        height: 80,
+                      ),
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.black,
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 50,
+                            vertical: 20,
+                          ),
+                          shape: const RoundedRectangleBorder(
+                            side: BorderSide(
+                              color: Colors.white,
+                              width: 0.3,
+                            ),
+                          ),
+                        ),
+                        onPressed: () {},
+                        child: Text(
+                          "SIGN IN",
+                          style: GoogleFonts.quicksand(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w500,
+                            fontSize: 14,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 60,
+                      ),
+                      InkWell(
+                        onTap: () {},
+                        child: Text(
+                          'CREATE ACCOUNT',
+                          style: GoogleFonts.quicksand(
+                            color: Colors.white,
+                            fontSize: 10,
+                            fontWeight: FontWeight.w200,
+                          ),
+                        ),
+                      ),
                     ],
                   ),
                 ),
