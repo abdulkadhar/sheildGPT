@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shield_gpt/asset_controller.dart';
+import 'package:simple_ripple_animation/simple_ripple_animation.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -9,23 +9,31 @@ class LoginScreen extends StatelessWidget {
     return Scaffold(
       body: Row(
         children: [
-          Container(
-              height: MediaQuery.of(context).size.height,
-              width: MediaQuery.of(context).size.width * 0.4,
-              color: Colors.amber,
-              child: Image.asset(
-                AssetController.login_side_img,
-                fit: BoxFit.fill,
-              )),
-          Container(
-            height: MediaQuery.of(context).size.height,
-            width: MediaQuery.of(context).size.width * 0.6,
-            color: Colors.red,
-            child: const Center(
-              child: Text(
-                'Right Side',
-                style: TextStyle(
-                  color: Colors.white,
+          Expanded(
+            child: Container(
+              color: Colors.black,
+            ),
+          ),
+          Expanded(
+            child: Container(
+              color: Colors.white,
+              child: Center(
+                child: RippleAnimation(
+                  color: const Color.fromARGB(8, 0, 0, 0),
+                  delay: const Duration(seconds: 6),
+                  repeat: true,
+                  minRadius: 100,
+                  maxRadius: 150,
+                  ripplesCount: 1,
+                  duration: const Duration(milliseconds: 6 * 300),
+                  child: Container(
+                    height: 100,
+                    width: 100,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(100),
+                    ),
+                  ),
                 ),
               ),
             ),
