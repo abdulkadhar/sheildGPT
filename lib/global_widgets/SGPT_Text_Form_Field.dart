@@ -54,21 +54,25 @@ class _SgptTextFormFieldState extends State<SgptTextFormField> {
               style: GoogleFonts.quicksand(
                 color: widget.errorText == null ? Colors.white : Colors.red,
                 fontSize: 14,
+                fontWeight: FontWeight.w300,
               ),
             ),
             border: UnderlineInputBorder(
               borderSide: BorderSide(
                 color: widget.errorText == null ? Colors.white : Colors.red,
+                width: 0.4,
               ),
             ),
             focusedBorder: UnderlineInputBorder(
               borderSide: BorderSide(
                 color: widget.errorText == null ? Colors.white : Colors.red,
+                width: 0.4,
               ),
             ),
             enabledBorder: UnderlineInputBorder(
               borderSide: BorderSide(
                 color: widget.errorText == null ? Colors.white : Colors.red,
+                width: 0.4,
               ),
             ),
           ),
