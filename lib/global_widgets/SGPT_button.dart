@@ -4,10 +4,14 @@ import 'package:google_fonts/google_fonts.dart';
 class SGPTButton extends StatelessWidget {
   final String label;
   final VoidCallback onPress;
+  final bool isLoading;
+  final String loadingLabel;
   const SGPTButton({
     super.key,
     required this.label,
     required this.onPress,
+    this.isLoading = false,
+    this.loadingLabel = '',
   });
 
   @override
@@ -26,14 +30,33 @@ class SGPTButton extends StatelessWidget {
           ),
         ),
       ),
-      onPressed: onPress,
-      child: Text(
-        label,
-        style: GoogleFonts.quicksand(
-          color: Colors.white,
-          fontWeight: FontWeight.w500,
-          fontSize: 12,
-        ),
+      onPressed: isLoading ? null : onPress,
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Text(
+            // NOTE - Ternary operator for switching the label
+            isLoading ? loadingLabel : label,
+            style: GoogleFonts.quicksand(
+              color: Colors.white,
+              fontWeight: FontWeight.w500,
+              fontSize: 12,
+            ),
+          ),
+          if (isLoading)
+            const SizedBox(
+              width: 20,
+            ),
+          if (isLoading)
+            const SizedBox(
+              height: 12,
+              width: 12,
+              child: CircularProgressIndicator(
+                color: Colors.white,
+                strokeWidth: 2,
+              ),
+            )
+        ],
       ),
     );
   }
