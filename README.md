@@ -32,6 +32,16 @@ _**SGPT-7**_
 
 - Design finalization for the login screen.
 - Design reference
+
   - [Design one](https://dribbble.com/shots/12069840-Hotspot-System-Login-Page)
   - [Design two](https://dribbble.com/shots/5059058-The-Glyph-Login-Form)
   - [Design three](https://dribbble.com/shots/17682332-Creative-Login-Form-Design) - **Final**
+
+  **86cy76ujt**
+
+- Design finalization for the upload screen
+- Design reference
+  - [Design one](https://dribbble.com/shots/24883726-Remake-My-Logo-AI-App)
+  - [Design two](https://dribbble.com/shots/24958489-Daily-Sketch-22-File-Upload) - get the layout from here
+  - [Design two](https://dribbble.com/shots/15832392-File-Upload-DailyUI-031) - get the color from here
+  - [Design three](https://dribbble.com/shots/3379704-File-Upload-Ui-Design) - Final one
