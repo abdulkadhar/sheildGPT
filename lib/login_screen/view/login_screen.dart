@@ -31,7 +31,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       builder: (context, loginScreenController, child) {
                     return Center(
                       child: SizedBox(
-                        width: MediaQuery.of(context).size.width * 0.3,
+                        width: MediaQuery.of(context).size.width * 0.25,
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
@@ -41,7 +41,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               style: GoogleFonts.quicksand(
                                 color: Colors.white,
                                 fontSize: 22,
-                                fontWeight: FontWeight.w100,
+                                fontWeight: FontWeight.w500,
                               ),
                             ),
                             const SizedBox(
@@ -56,13 +56,12 @@ class _LoginScreenState extends State<LoginScreen> {
                                   loginScreenController.userNameErrorText,
                             ),
                             const SizedBox(
-                              height: 30,
+                              height: 5,
                             ),
                             SgptTextFormField(
                               labelText: 'Password',
                               isPassword: true,
                               onChanged: (passwordValue) {
-                                print('ON_CHANGED: $passwordValue');
                                 loginScreenController
                                     .setPassword(passwordValue);
                               },
@@ -95,7 +94,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 style: GoogleFonts.quicksand(
                                   color: Colors.white,
                                   fontWeight: FontWeight.w500,
-                                  fontSize: 14,
+                                  fontSize: 12,
                                 ),
                               ),
                             ),
@@ -126,7 +125,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   // SECTION Sign up form
                   Center(
                     child: SizedBox(
-                      width: MediaQuery.of(context).size.width * 0.3,
+                      width: MediaQuery.of(context).size.width * 0.25,
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
@@ -136,21 +135,36 @@ class _LoginScreenState extends State<LoginScreen> {
                             style: GoogleFonts.quicksand(
                               color: Colors.white,
                               fontSize: 22,
-                              fontWeight: FontWeight.w100,
+                              fontWeight: FontWeight.w500,
                             ),
                           ),
                           const SizedBox(
                             height: 50,
                           ),
                           SgptTextFormField(
+                            labelText: 'Username',
+                            onChanged: (emailValue) {},
+                          ),
+                          const SizedBox(
+                            height: 10,
+                          ),
+                          SgptTextFormField(
                             labelText: 'Email',
                             onChanged: (emailValue) {},
                           ),
                           const SizedBox(
-                            height: 30,
+                            height: 10,
                           ),
                           SgptTextFormField(
                             labelText: 'Password',
+                            isPassword: true,
+                            onChanged: (passwordValue) {},
+                          ),
+                          const SizedBox(
+                            height: 10,
+                          ),
+                          SgptTextFormField(
+                            labelText: 'Confirm Password',
                             isPassword: true,
                             onChanged: (passwordValue) {},
                           ),
@@ -177,7 +191,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               style: GoogleFonts.quicksand(
                                 color: Colors.white,
                                 fontWeight: FontWeight.w500,
-                                fontSize: 14,
+                                fontSize: 12,
                               ),
                             ),
                           ),
