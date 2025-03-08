@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shield_gpt/global_controller/app_scroll_behaviour.dart';
 import 'package:shield_gpt/login_screen/view/login_screen.dart';
 
 void main() {
@@ -9,9 +10,10 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+      scrollBehavior: AppScrollBehavior(),
       title: 'Shield GPT',
-      home: LoginScreen(),
+      home: const LoginScreen(),
     );
   }
 }
