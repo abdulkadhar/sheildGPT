@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:shield_gpt/global_widgets/SGPT_Text_Form_Field.dart';
+import 'package:shield_gpt/initial_file_upload_screen/view/initial_file_upload_screen.dart';
 import 'package:shield_gpt/login_screen/controller/login_screen_controller.dart';
 import 'package:shield_gpt/login_screen/widgets/ripple_container.dart';
 
@@ -86,8 +87,13 @@ class _LoginScreenState extends State<LoginScreen> {
                                 ),
                               ),
                               onPressed: () {
-                                print(
-                                    'username value: ${loginScreenController.getUserName()}\nPassword Value: ${loginScreenController.getUsePassword()}');
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (ctx) =>
+                                        const InitialFileUploadScreen(),
+                                  ),
+                                );
                               },
                               child: Text(
                                 "SIGN IN",
