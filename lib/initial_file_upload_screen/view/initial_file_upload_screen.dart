@@ -1,6 +1,7 @@
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:lottie/lottie.dart';
 import 'package:shield_gpt/global_widgets/SGPT_button.dart';
 
 class InitialFileUploadScreen extends StatelessWidget {
@@ -19,8 +20,8 @@ class InitialFileUploadScreen extends StatelessWidget {
               borderType: BorderType.RRect,
               radius: const Radius.circular(12),
               child: Container(
-                height: MediaQuery.of(context).size.height * 0.35,
-                width: MediaQuery.of(context).size.height * 0.35,
+                height: MediaQuery.of(context).size.height * 0.45,
+                width: MediaQuery.of(context).size.height * 0.45,
                 decoration: BoxDecoration(
                   color: const Color(0XFF202020),
                   borderRadius: BorderRadius.circular(12),
@@ -29,9 +30,10 @@ class InitialFileUploadScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    // TODO change this with the lottie animation for better view
-                    Container(
-                      child: Text('This is the animation container'),
+                    Lottie.asset(
+                      'assets/lottie/file_upload_animation.json',
+                      height: 200,
+                      width: 200,
                     ),
                     const SizedBox(height: 10),
                     Padding(
