@@ -30,7 +30,9 @@ class SGPTButton extends StatelessWidget {
           ),
         ),
       ),
-      onPressed: isLoading ? null : onPress,
+      // TODO Uncomment this once the work is done
+      // onPressed: isLoading ? null : onPress,
+      onPressed: onPress,
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
