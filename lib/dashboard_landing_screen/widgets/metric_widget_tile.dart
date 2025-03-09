@@ -4,45 +4,52 @@ import 'package:google_fonts/google_fonts.dart';
 
 class MetricWidgetTile extends StatelessWidget {
   final String label;
+  final int count;
+  final VoidCallback onPress;
   const MetricWidgetTile({
     super.key,
     required this.label,
+    required this.count,
+    required this.onPress,
   });
 
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: Container(
-        padding: const EdgeInsets.all(10),
-        height: (MediaQuery.of(context).size.height * 0.77) / 4,
-        decoration: BoxDecoration(
-          color: const Color(0XFF0F112C),
-          borderRadius: BorderRadius.circular(10),
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              "Packets Count",
-              style: GoogleFonts.quicksand(
-                color: Colors.white,
-                fontWeight: FontWeight.w300,
-                fontSize: 18,
-              ),
-            ),
-            Spacer(),
-            Center(
-              child: AnimatedDigitWidget(
-                value: 9000,
-                textStyle: GoogleFonts.quicksand(
+      child: InkWell(
+        onTap: onPress,
+        child: Container(
+          padding: const EdgeInsets.all(10),
+          height: (MediaQuery.of(context).size.height * 0.77) / 4,
+          decoration: BoxDecoration(
+            color: const Color(0XFF0F112C),
+            borderRadius: BorderRadius.circular(10),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                label,
+                style: GoogleFonts.quicksand(
                   color: Colors.white,
-                  fontWeight: FontWeight.w200,
-                  fontSize: 22,
+                  fontWeight: FontWeight.w300,
+                  fontSize: 18,
                 ),
               ),
-            ),
-            Spacer(),
-          ],
+              const Spacer(),
+              Center(
+                child: AnimatedDigitWidget(
+                  value: count,
+                  textStyle: GoogleFonts.quicksand(
+                    color: Colors.white,
+                    fontWeight: FontWeight.w200,
+                    fontSize: 22,
+                  ),
+                ),
+              ),
+              const Spacer(),
+            ],
+          ),
         ),
       ),
     );
