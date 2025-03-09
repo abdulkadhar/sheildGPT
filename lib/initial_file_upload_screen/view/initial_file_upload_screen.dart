@@ -59,26 +59,6 @@ class InitialFileUploadScreen extends StatelessWidget {
                         ),
                       ),
                       const SizedBox(height: 20),
-                      SGPTButton(
-                        label: 'Analyze',
-                        onPress: () {
-                          // NOTE toggling the value of the status
-                          initialFileUploadScreenController.setUploadingStatus(
-                            !initialFileUploadScreenController
-                                .getUploadingStatus(),
-                          );
-                          initialFileUploadScreenController.addFileData(
-                            FileModel(
-                              fileName: 'linked-1.pcap',
-                              fileSize: 100,
-                            ),
-                          );
-                        },
-                        isLoading: initialFileUploadScreenController
-                            .getUploadingStatus(),
-                        loadingLabel: 'Uploading the file',
-                      ),
-                      const SizedBox(height: 20),
                       // SECTION - Uploading file status
                       if (initialFileUploadScreenController
                               .getSelectedFileCount() >
@@ -87,6 +67,57 @@ class InitialFileUploadScreen extends StatelessWidget {
                           fileData: initialFileUploadScreenController
                               .getSelectedFile(),
                         ),
+                      const SizedBox(height: 20),
+                      SGPTButton(
+                        label: 'Analyze',
+                        onPress: () {
+                          // NOTE toggling the value of the status
+                          if (initialFileUploadScreenController
+                                  .getUploadingStatus() ==
+                              UploadingStatus.started) {
+                            initialFileUploadScreenController
+                                .clearSelectedFiles();
+                          }
+                          // NOTE changing the uploading status
+                          if (initialFileUploadScreenController
+                                      .getUploadingStatus() ==
+                                  UploadingStatus.idle ||
+                              initialFileUploadScreenController
+                                      .getUploadingStatus() ==
+                                  UploadingStatus.completed) {
+                            initialFileUploadScreenController
+                                .setUploadingStatus(
+                              UploadingStatus.started,
+                            );
+                          } else if (initialFileUploadScreenController
+                                  .getUploadingStatus() ==
+                              UploadingStatus.started) {
+                            initialFileUploadScreenController
+                                .setUploadingStatus(
+                              UploadingStatus.completed,
+                            );
+                          } else {
+                            initialFileUploadScreenController
+                                .setUploadingStatus(
+                              UploadingStatus.idle,
+                            );
+                          }
+                          if (initialFileUploadScreenController
+                                  .getUploadingStatus() ==
+                              UploadingStatus.started) {
+                            initialFileUploadScreenController.addFileData(
+                              FileModel(
+                                fileName: 'linked-1.pcap',
+                                fileSize: 100,
+                              ),
+                            );
+                          }
+                        },
+                        isLoading: initialFileUploadScreenController
+                                .getUploadingStatus() ==
+                            UploadingStatus.started,
+                        loadingLabel: 'Uploading file',
+                      ),
                       const SizedBox(height: 40),
                     ],
                   ),
