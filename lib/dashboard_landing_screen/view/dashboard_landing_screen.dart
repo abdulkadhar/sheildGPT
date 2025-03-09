@@ -306,8 +306,10 @@ class DashboardLandingScreen extends StatelessWidget {
                         Expanded(
                           child: Container(
                             width: double.infinity,
-                            decoration: const BoxDecoration(
-                              color: Color(0XFF0F112C),
+                            padding: const EdgeInsets.all(20),
+                            decoration: BoxDecoration(
+                              color: const Color(0XFF0F112C),
+                              borderRadius: BorderRadius.circular(10),
                             ),
                             child: Text(
                               "Text",
