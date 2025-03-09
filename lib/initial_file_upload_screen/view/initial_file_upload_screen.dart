@@ -5,6 +5,8 @@ import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
 import 'package:shield_gpt/global_widgets/SGPT_button.dart';
 import 'package:shield_gpt/initial_file_upload_screen/controller/initial_file_upload_screen_controller.dart';
+import 'package:shield_gpt/initial_file_upload_screen/model/file_model.dart';
+import 'package:shield_gpt/initial_file_upload_screen/widget/file_upload_container.dart';
 
 class InitialFileUploadScreen extends StatelessWidget {
   const InitialFileUploadScreen({super.key});
@@ -27,13 +29,14 @@ class InitialFileUploadScreen extends StatelessWidget {
                 borderType: BorderType.RRect,
                 radius: const Radius.circular(12),
                 child: Container(
-                  height: MediaQuery.of(context).size.height * 0.45,
+                  // height: MediaQuery.of(context).size.height * 0.45,
                   width: MediaQuery.of(context).size.height * 0.45,
                   decoration: BoxDecoration(
                     color: const Color(0XFF202020),
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: Column(
+                    mainAxisSize: MainAxisSize.min,
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
@@ -64,11 +67,27 @@ class InitialFileUploadScreen extends StatelessWidget {
                             !initialFileUploadScreenController
                                 .getUploadingStatus(),
                           );
+                          initialFileUploadScreenController.addFileData(
+                            FileModel(
+                              fileName: 'linked-1.pcap',
+                              fileSize: 100,
+                            ),
+                          );
                         },
                         isLoading: initialFileUploadScreenController
                             .getUploadingStatus(),
                         loadingLabel: 'Uploading the file',
-                      )
+                      ),
+                      const SizedBox(height: 20),
+                      // SECTION - Uploading file status
+                      if (initialFileUploadScreenController
+                              .getSelectedFileCount() >
+                          0)
+                        FileUploadContainer(
+                          fileData: initialFileUploadScreenController
+                              .getSelectedFile(),
+                        ),
+                      const SizedBox(height: 40),
                     ],
                   ),
                 ),
