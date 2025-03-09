@@ -33,25 +33,25 @@ class FileUploadContainer extends StatelessWidget {
           const Icon(
             Icons.cloud_upload_sharp,
             color: Colors.white,
-            size: 12,
+            size: 20,
           ),
           const SizedBox(
-            width: 5,
+            width: 10,
           ),
           Text(
-            'File name',
+            fileData.fileName,
             style: GoogleFonts.quicksand(
               color: Colors.white,
-              fontSize: 12,
+              fontSize: 14,
             ),
           ),
-          Spacer(),
+          const Spacer(),
           // NOTE file Size goes here
           Text(
-            '949 kb',
+            '${fileData.fileSize} kb',
             style: GoogleFonts.quicksand(
               color: Colors.white,
-              fontSize: 12,
+              fontSize: 14,
             ),
           ),
           const SizedBox(
