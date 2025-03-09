@@ -249,19 +249,25 @@ class DashboardLandingScreen extends StatelessWidget {
                                     MainAxisAlignment.spaceEvenly,
                                 children: [
                                   MetricWidgetTile(
-                                    label: 'data',
+                                    label: 'Total Packets',
+                                    count: 2455,
+                                    onPress: () {},
                                   ),
                                   const SizedBox(
                                     width: 10,
                                   ),
                                   MetricWidgetTile(
-                                    label: 'data',
+                                    label: 'Hosts',
+                                    count: 33,
+                                    onPress: () {},
                                   ),
                                   const SizedBox(
                                     width: 10,
                                   ),
                                   MetricWidgetTile(
-                                    label: 'data',
+                                    label: 'Links',
+                                    count: 33,
+                                    onPress: () {},
                                   ),
                                 ],
                               ),
@@ -272,19 +278,25 @@ class DashboardLandingScreen extends StatelessWidget {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   MetricWidgetTile(
-                                    label: 'data',
+                                    label: 'Average Duration',
+                                    count: 1833,
+                                    onPress: () {},
                                   ),
                                   const SizedBox(
                                     width: 10,
                                   ),
                                   MetricWidgetTile(
-                                    label: 'data',
+                                    label: 'Max Duration',
+                                    count: 3345,
+                                    onPress: () {},
                                   ),
                                   const SizedBox(
                                     width: 10,
                                   ),
                                   MetricWidgetTile(
-                                    label: 'data',
+                                    label: 'Min Duration',
+                                    count: 123,
+                                    onPress: () {},
                                   ),
                                 ],
                               ),
