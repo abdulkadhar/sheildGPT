@@ -1,3 +1,4 @@
+import 'package:animated_digit/animated_digit.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -28,7 +29,19 @@ class MetricWidgetTile extends StatelessWidget {
                 fontWeight: FontWeight.w300,
                 fontSize: 18,
               ),
-            )
+            ),
+            Spacer(),
+            Center(
+              child: AnimatedDigitWidget(
+                value: 9000,
+                textStyle: GoogleFonts.quicksand(
+                  color: Colors.white,
+                  fontWeight: FontWeight.w200,
+                  fontSize: 22,
+                ),
+              ),
+            ),
+            Spacer(),
           ],
         ),
       ),
