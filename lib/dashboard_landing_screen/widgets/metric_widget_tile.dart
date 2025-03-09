@@ -39,6 +39,7 @@ class MetricWidgetTile extends StatelessWidget {
               const Spacer(),
               Center(
                 child: AnimatedDigitWidget(
+                  duration: const Duration(seconds: 3),
                   value: count,
                   textStyle: GoogleFonts.quicksand(
                     color: Colors.white,
