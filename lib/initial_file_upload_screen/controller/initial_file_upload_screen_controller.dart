@@ -1,19 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:shield_gpt/initial_file_upload_screen/model/file_model.dart';
 
+enum UploadingStatus {
+  idle,
+  started,
+  completed,
+}
+
 class InitialFileUploadScreenController extends ChangeNotifier {
   // NOTE - State for the selected files
   List<FileModel> selectedFile = [];
-  bool isUploading = false;
+  UploadingStatus uploadingStatus = UploadingStatus.idle;
 
   // SECTION - Uploading status handler
-  void setUploadingStatus(bool status) {
-    isUploading = status;
+  void setUploadingStatus(UploadingStatus status) {
+    uploadingStatus = status;
     notifyListeners();
   }
 
-  bool getUploadingStatus() {
-    return isUploading;
+  UploadingStatus getUploadingStatus() {
+    return uploadingStatus;
   }
 
   //!SECTION
