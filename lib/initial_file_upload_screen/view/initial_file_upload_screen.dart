@@ -41,7 +41,11 @@ class InitialFileUploadScreen extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Lottie.asset(
-                        'assets/lottie/file_upload_animation.json',
+                        initialFileUploadScreenController
+                                    .getUploadingStatus() ==
+                                UploadingStatus.completed
+                            ? 'assets/lottie/completed-animation.json'
+                            : 'assets/lottie/file_upload_animation.json',
                         height: 200,
                         width: 200,
                       ),
@@ -49,7 +53,7 @@ class InitialFileUploadScreen extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 10),
                         child: Text(
-                          "Please do upload the PCAP file to get analyzed",
+                          initialFileUploadScreenController.getFormLabel(),
                           textAlign: TextAlign.center,
                           style: GoogleFonts.quicksand(
                             color: Colors.white,
@@ -69,12 +73,13 @@ class InitialFileUploadScreen extends StatelessWidget {
                         ),
                       const SizedBox(height: 20),
                       SGPTButton(
-                        label: 'Analyze',
+                        label:
+                            initialFileUploadScreenController.getButtonLabel(),
                         onPress: () {
                           // NOTE toggling the value of the status
                           if (initialFileUploadScreenController
                                   .getUploadingStatus() ==
-                              UploadingStatus.started) {
+                              UploadingStatus.completed) {
                             initialFileUploadScreenController
                                 .clearSelectedFiles();
                           }
