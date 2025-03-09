@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
+import 'package:shield_gpt/dashboard_landing_screen/controller/dashboard_landing_screen_controller.dart';
 import 'package:shield_gpt/dashboard_landing_screen/widgets/circle_holder_widget.dart';
 import 'package:shield_gpt/dashboard_landing_screen/widgets/metric_widget_tile.dart';
 import 'package:shield_gpt/dashboard_landing_screen/widgets/side_nav_item.dart';
+import 'package:shield_gpt/dashboard_landing_screen/widgets/table_cell_widget.dart';
+import 'package:shield_gpt/dashboard_landing_screen/widgets/table_row_full_widget.dart';
 
 class DashboardLandingScreen extends StatelessWidget {
   const DashboardLandingScreen({super.key});
@@ -311,11 +314,62 @@ class DashboardLandingScreen extends StatelessWidget {
                               color: const Color(0XFF0F112C),
                               borderRadius: BorderRadius.circular(10),
                             ),
-                            child: Text(
-                              "Text",
-                              style: GoogleFonts.quicksand(
-                                color: Colors.white,
-                              ),
+                            child: ListView(
+                              children: [
+                                Text(
+                                  "Packet Information",
+                                  style: GoogleFonts.quicksand(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w300,
+                                    fontSize: 18,
+                                  ),
+                                ),
+                                const SizedBox(
+                                  height: 20,
+                                ),
+                                // SECTION - Table header section
+                                const Row(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    TableCellWidget(
+                                      label: 'TimeStamp',
+                                      isHeader: true,
+                                    ),
+                                    TableCellWidget(
+                                      label: 'Protocol',
+                                      isHeader: true,
+                                    ),
+                                    TableCellWidget(
+                                      label: 'Sr. IP',
+                                      isHeader: true,
+                                    ),
+                                    TableCellWidget(
+                                      label: 'Sr. Port',
+                                      isHeader: true,
+                                    ),
+                                    TableCellWidget(
+                                      label: 'Ds. Ip',
+                                      isHeader: true,
+                                    ),
+                                    TableCellWidget(
+                                      label: 'Ds. Port',
+                                      isHeader: true,
+                                    ),
+                                  ],
+                                ),
+                                Column(
+                                  children: List.generate(
+                                    DashboardLandingScreenController
+                                        .tableData.length,
+                                    (index) => TableRowFullWidget(
+                                      modelData:
+                                          DashboardLandingScreenController
+                                              .tableData[index],
+                                    ),
+                                  ),
+                                )
+                                //!SECTION
+                              ],
                             ),
                           ),
                         )
