@@ -51,3 +51,9 @@ _**SGPT-7**_
 - Design finalization for the file selected screen
 - Design reference
   - [Design final](https://dribbble.com/shots/15832392-File-Upload-DailyUI-031) - Refer the list element from the shared design
+
+**86cy770bq**
+
+- Design finalization for the loader screen
+- Design reference
+  - [Design final](https://dribbble.com/shots/15832392-File-Upload-DailyUI-031) - Need to replace the center container with the lottie animation and the below one subtitle and then percentage indicating the progress that has been done
