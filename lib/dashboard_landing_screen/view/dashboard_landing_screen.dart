@@ -4,9 +4,12 @@ import 'package:lottie/lottie.dart';
 import 'package:shield_gpt/dashboard_landing_screen/controller/dashboard_landing_screen_controller.dart';
 import 'package:shield_gpt/dashboard_landing_screen/widgets/circle_holder_widget.dart';
 import 'package:shield_gpt/dashboard_landing_screen/widgets/metric_widget_tile.dart';
+import 'package:shield_gpt/dashboard_landing_screen/widgets/selected_file_widget.dart';
 import 'package:shield_gpt/dashboard_landing_screen/widgets/side_nav_item.dart';
 import 'package:shield_gpt/dashboard_landing_screen/widgets/table_cell_widget.dart';
 import 'package:shield_gpt/dashboard_landing_screen/widgets/table_row_full_widget.dart';
+import 'package:shield_gpt/initial_file_upload_screen/model/file_model.dart';
+import 'package:shield_gpt/initial_file_upload_screen/widget/file_upload_container.dart';
 
 class DashboardLandingScreen extends StatelessWidget {
   const DashboardLandingScreen({super.key});
@@ -22,7 +25,7 @@ class DashboardLandingScreen extends StatelessWidget {
         child: Column(
           children: [
             // SECTION - Header navigation
-            Container(
+            SizedBox(
               height: MediaQuery.of(context).size.height * 0.1,
               child: Row(
                 children: [
@@ -43,6 +46,13 @@ class DashboardLandingScreen extends StatelessWidget {
                       color: Colors.white,
                       fontSize: 14,
                       fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                  const Spacer(),
+                  SelectedFileWidget(
+                    fileData: FileModel(
+                      fileName: 'linked-1.pcap',
+                      fileSize: 969,
                     ),
                   ),
                   const Spacer(),
