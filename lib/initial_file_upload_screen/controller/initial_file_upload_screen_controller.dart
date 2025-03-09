@@ -22,6 +22,32 @@ class InitialFileUploadScreenController extends ChangeNotifier {
     return uploadingStatus;
   }
 
+  String getButtonLabel() {
+    switch (uploadingStatus) {
+      case UploadingStatus.idle:
+        return 'Upload';
+
+      case UploadingStatus.started:
+        return 'Uploading file';
+
+      default:
+        return 'Analyze';
+    }
+  }
+
+  String getFormLabel() {
+    switch (uploadingStatus) {
+      case UploadingStatus.idle:
+        return 'Please do upload the PCAP file to get analyzed';
+
+      case UploadingStatus.started:
+        return 'Please wait it might take some time';
+
+      default:
+        return 'Please proceed to analyze';
+    }
+  }
+
   //!SECTION
   // SECTION - File handler
   void addFileData(FileModel fileData) {
