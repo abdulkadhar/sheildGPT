@@ -26,6 +26,14 @@ Visualizes network metrics for better interpretation.
 **Exportable Reports:**
 Generates detailed analytics reports in multiple formats (PDF).
 
+# Commands and Notes
+
+## Notes
+
+in order top get the network image use the following command to render the network image
+
+`flutter run --web-renderer html`
+
 ## Tickets and details
 
 _**SGPT-7**_
@@ -62,6 +70,6 @@ _**SGPT-7**_
 
 - Design finalization for the dashboard screen
 - Design reference
-  - [Design one] (https://dribbble.com/shots/23633037-Cryptocurrency-Dashboard-Investment-NFT-Blockchain) - for the component
-  - [Design two] (https://dribbble.com/shots/25701810-Finance-AI-Dashboard-UI-Website-Design) - for the layout this can be utilized
-  - [Design three] (https://dribbble.com/shots/25034110-Apiko-AI-AI-Chat-Assistant-for-Documents-Exploration) - Chat Ui will be used here
+  - [Design one](https://dribbble.com/shots/23633037-Cryptocurrency-Dashboard-Investment-NFT-Blockchain) - for the component
+  - [Design two](https://dribbble.com/shots/25701810-Finance-AI-Dashboard-UI-Website-Design) - for the layout this can be utilized
+  - [Design three](https://dribbble.com/shots/25034110-Apiko-AI-AI-Chat-Assistant-for-Documents-Exploration) - Chat Ui will be used here
