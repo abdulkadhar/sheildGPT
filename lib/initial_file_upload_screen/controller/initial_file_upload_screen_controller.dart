@@ -31,5 +31,9 @@ class InitialFileUploadScreenController extends ChangeNotifier {
   FileModel getSelectedFile() {
     return selectedFile.last;
   }
+
+  int getSelectedFileCount() {
+    return selectedFile.length;
+  }
   //!SECTION
 }
