@@ -14,7 +14,7 @@ class CircleHolderWidget extends StatelessWidget {
     required this.iconSize,
     required this.onPressed,
     this.iconColor = Colors.white,
-    this.backgroundColor = const Color(0XFF202020),
+    this.backgroundColor = const Color(0xFF0F112C),
   });
 
   @override
