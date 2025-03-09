@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:lottie/lottie.dart';
 import 'package:shield_gpt/dashboard_landing_screen/widgets/circle_holder_widget.dart';
+import 'package:shield_gpt/dashboard_landing_screen/widgets/metric_widget_tile.dart';
 import 'package:shield_gpt/dashboard_landing_screen/widgets/side_nav_item.dart';
 
 class DashboardLandingScreen extends StatelessWidget {
@@ -17,150 +19,297 @@ class DashboardLandingScreen extends StatelessWidget {
         child: Column(
           children: [
             // SECTION - Header navigation
-            Row(
-              children: [
-                const SizedBox(
-                  width: 20,
-                ),
-                Image.asset(
-                  'assets/images/ripple_logo_white.png',
-                  width: 50,
-                  height: 40,
-                ),
-                const SizedBox(
-                  width: 10,
-                ),
-                Text(
-                  "Shield GPT",
-                  style: GoogleFonts.quicksand(
-                    color: Colors.white,
-                    fontSize: 14,
-                    fontWeight: FontWeight.w400,
+            Container(
+              height: MediaQuery.of(context).size.height * 0.1,
+              child: Row(
+                children: [
+                  const SizedBox(
+                    width: 20,
                   ),
-                ),
-                const Spacer(),
-                CircleHolderWidget(
-                  radius: 45,
-                  iconData: Icons.notifications_none,
-                  iconSize: 16,
-                  iconColor: Colors.white,
-                  onPressed: () {},
-                ),
-                const SizedBox(
-                  width: 5,
-                ),
-                CircleHolderWidget(
-                  radius: 45,
-                  iconData: Icons.chat_bubble,
-                  iconSize: 16,
-                  onPressed: () {},
-                ),
-                const SizedBox(
-                  width: 5,
-                ),
-                // ProfilePictureWidget(
-                //   onPressed: () {},
-                //   radius: 45,
-                // ),
-                const SizedBox(
-                  width: 20,
-                )
-              ],
+                  Image.asset(
+                    'assets/images/ripple_logo_white.png',
+                    width: 50,
+                    height: 40,
+                  ),
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  Text(
+                    "Shield GPT",
+                    style: GoogleFonts.quicksand(
+                      color: Colors.white,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                  const Spacer(),
+                  CircleHolderWidget(
+                    radius: 45,
+                    iconData: Icons.notifications_none,
+                    iconSize: 16,
+                    iconColor: Colors.white,
+                    onPressed: () {},
+                  ),
+                  const SizedBox(
+                    width: 5,
+                  ),
+                  CircleHolderWidget(
+                    radius: 45,
+                    iconData: Icons.chat_bubble,
+                    iconSize: 16,
+                    onPressed: () {},
+                  ),
+                  const SizedBox(
+                    width: 5,
+                  ),
+                  // ProfilePictureWidget(
+                  //   onPressed: () {},
+                  //   radius: 45,
+                  // ),
+                  const SizedBox(
+                    width: 20,
+                  )
+                ],
+              ),
             ),
             const SizedBox(
               height: 20,
             ),
             // SECTION - Bottom main content
-            Row(
-              children: [
-                Container(
-                  width: 80,
-                  height: MediaQuery.of(context).size.height * 0.85,
-                  decoration: BoxDecoration(
-                    color: const Color(0XFF0F112C),
-                    borderRadius: BorderRadius.circular(20),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.82,
+              width: MediaQuery.of(context).size.width,
+              child: Row(
+                children: [
+                  // SECTION - Left Side Navigation Bar
+                  Container(
+                    width: 80,
+                    decoration: BoxDecoration(
+                      color: const Color(0XFF0F112C),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: Column(
+                      children: [
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        // SECTION AI ball
+                        Container(
+                          height: 50,
+                          width: 50,
+                          decoration: BoxDecoration(
+                            color: Colors.red,
+                            borderRadius: BorderRadius.circular(50),
+                          ),
+                          child: const Icon(
+                            Icons.bolt,
+                            size: 20,
+                            color: Colors.white,
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        // SECTION Divider
+                        Container(
+                          margin: const EdgeInsets.symmetric(horizontal: 5),
+                          child: const Divider(
+                            color: Colors.white,
+                            thickness: 0.2,
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        SideNavItem(
+                          iconData: Icons.dashboard,
+                          onPressed: () {},
+                        ),
+                        SizedBox(
+                          height: MediaQuery.of(context).size.height * 0.05,
+                        ),
+                        SideNavItem(
+                          iconData: Icons.trending_up,
+                          onPressed: () {},
+                        ),
+                        SizedBox(
+                          height: MediaQuery.of(context).size.height * 0.05,
+                        ),
+                        SideNavItem(
+                          iconData: Icons.search,
+                          onPressed: () {},
+                        ),
+                        SizedBox(
+                          height: MediaQuery.of(context).size.height * 0.05,
+                        ),
+                        SideNavItem(
+                          iconData: Icons.settings,
+                          onPressed: () {},
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        // SECTION Divider
+                        Container(
+                          margin: const EdgeInsets.symmetric(horizontal: 5),
+                          child: const Divider(
+                            color: Colors.white,
+                            thickness: 0.2,
+                          ),
+                        ),
+                        const Spacer(),
+                        SideNavItem(
+                          iconData: Icons.exit_to_app,
+                          onPressed: () {},
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                      ],
+                    ),
                   ),
-                  child: Column(
-                    children: [
-                      const SizedBox(
-                        height: 20,
-                      ),
-                      // SECTION AI ball
-                      Container(
-                        height: 50,
-                        width: 50,
-                        decoration: BoxDecoration(
-                          color: Colors.red,
-                          borderRadius: BorderRadius.circular(50),
-                        ),
-                        child: const Icon(
-                          Icons.bolt,
-                          size: 20,
-                          color: Colors.white,
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 20,
-                      ),
-                      // SECTION Divider
-                      Container(
-                        margin: const EdgeInsets.symmetric(horizontal: 5),
-                        child: const Divider(
-                          color: Colors.white,
-                          thickness: 0.2,
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 20,
-                      ),
-                      SideNavItem(
-                        iconData: Icons.dashboard,
-                        onPressed: () {},
-                      ),
-                      SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.05,
-                      ),
-                      SideNavItem(
-                        iconData: Icons.trending_up,
-                        onPressed: () {},
-                      ),
-                      SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.05,
-                      ),
-                      SideNavItem(
-                        iconData: Icons.search,
-                        onPressed: () {},
-                      ),
-                      SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.05,
-                      ),
-                      SideNavItem(
-                        iconData: Icons.settings,
-                        onPressed: () {},
-                      ),
-                      const SizedBox(
-                        height: 20,
-                      ),
-                      // SECTION Divider
-                      Container(
-                        margin: const EdgeInsets.symmetric(horizontal: 5),
-                        child: const Divider(
-                          color: Colors.white,
-                          thickness: 0.2,
-                        ),
-                      ),
-                      const Spacer(),
-                      SideNavItem(
-                        iconData: Icons.exit_to_app,
-                        onPressed: () {},
-                      ),
-                      const SizedBox(
-                        height: 20,
-                      ),
-                    ],
+                  //!SECTION
+                  const SizedBox(
+                    width: 10,
                   ),
-                )
-              ],
+                  // SECTION AI Chat Bot Container
+                  Expanded(
+                    flex: 2,
+                    child: Container(
+                      padding: const EdgeInsets.all(20),
+                      height: double.infinity,
+                      decoration: BoxDecoration(
+                        color: const Color(0XFF0F112C),
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "AI Analyzer",
+                            style: GoogleFonts.quicksand(
+                              color: Colors.white,
+                              fontSize: 22,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                          SizedBox(
+                            height: MediaQuery.of(context).size.height * 0.1,
+                          ),
+                          Center(
+                            child: Container(
+                              height: 350,
+                              width: 350,
+                              decoration: BoxDecoration(
+                                color: const Color(0xFF182A54),
+                                border: Border.all(
+                                  color: Colors.white,
+                                  width: 0.4,
+                                ),
+                                borderRadius: BorderRadius.circular(300),
+                              ),
+                              child: Lottie.asset(
+                                'assets/lottie/gradient_animation.json',
+                              ),
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 40,
+                          ),
+                          Center(
+                            child: Text(
+                              "Analyze the PCAP file with the power of AI",
+                              style: GoogleFonts.quicksand(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w300,
+                                fontSize: 18,
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                  //!SECTION
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  // SECTION - Analytics section
+                  Expanded(
+                    flex: 3,
+                    child: Column(
+                      children: [
+                        Expanded(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              // SECTION Row 1
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  MetricWidgetTile(
+                                    label: 'data',
+                                  ),
+                                  const SizedBox(
+                                    width: 10,
+                                  ),
+                                  MetricWidgetTile(
+                                    label: 'data',
+                                  ),
+                                  const SizedBox(
+                                    width: 10,
+                                  ),
+                                  MetricWidgetTile(
+                                    label: 'data',
+                                  ),
+                                ],
+                              ),
+
+                              // SECTION Row 2
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  MetricWidgetTile(
+                                    label: 'data',
+                                  ),
+                                  const SizedBox(
+                                    width: 10,
+                                  ),
+                                  MetricWidgetTile(
+                                    label: 'data',
+                                  ),
+                                  const SizedBox(
+                                    width: 10,
+                                  ),
+                                  MetricWidgetTile(
+                                    label: 'data',
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                        Expanded(
+                          child: Container(
+                            width: double.infinity,
+                            decoration: const BoxDecoration(
+                              color: Color(0XFF0F112C),
+                            ),
+                            child: Text(
+                              "Text",
+                              style: GoogleFonts.quicksand(
+                                color: Colors.white,
+                              ),
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                  )
+                ],
+              ),
             )
           ],
         ),
