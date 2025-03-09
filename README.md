@@ -26,6 +26,14 @@ Visualizes network metrics for better interpretation.
 **Exportable Reports:**
 Generates detailed analytics reports in multiple formats (PDF).
 
+# Commands and Notes
+
+## Notes
+
+in order top get the network image use the following command to render the network image
+
+`flutter run --web-renderer html`
+
 ## Tickets and details
 
 _**SGPT-7**_
