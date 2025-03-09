@@ -45,3 +45,9 @@ _**SGPT-7**_
   - [Design two](https://dribbble.com/shots/24958489-Daily-Sketch-22-File-Upload) - get the layout from here
   - [Design two](https://dribbble.com/shots/15832392-File-Upload-DailyUI-031) - get the color from here
   - [Design three](https://dribbble.com/shots/3379704-File-Upload-Ui-Design) - Final one
+
+**86cy76x13**
+
+- Design finalization for the file selected screen
+- Design reference
+  - [Design final](https://dribbble.com/shots/15832392-File-Upload-DailyUI-031) - Refer the list element from the shared design
