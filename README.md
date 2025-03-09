@@ -66,10 +66,16 @@ _**SGPT-7**_
 - Design reference
   - [Design final](https://dribbble.com/shots/15832392-File-Upload-DailyUI-031) - Need to replace the center container with the lottie animation and the below one subtitle and then percentage indicating the progress that has been done
 
-## **86cy76uj7**
+**86cy76uj7**
 
 - Design finalization for the dashboard screen
 - Design reference
   - [Design one](https://dribbble.com/shots/23633037-Cryptocurrency-Dashboard-Investment-NFT-Blockchain) - for the component
   - [Design two](https://dribbble.com/shots/25701810-Finance-AI-Dashboard-UI-Website-Design) - for the layout this can be utilized
   - [Design three](https://dribbble.com/shots/25034110-Apiko-AI-AI-Chat-Assistant-for-Documents-Exploration) - Chat Ui will be used here
+
+**86cy7akux**
+
+- Design for the stats option page
+- Design References
+  - [Design One](https://dribbble.com/shots/25510004--Smart-Convo-App-Design-AI-App-Design) - Use the design for the card design
