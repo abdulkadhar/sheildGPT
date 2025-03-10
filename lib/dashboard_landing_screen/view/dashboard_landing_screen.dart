@@ -9,7 +9,6 @@ import 'package:shield_gpt/dashboard_landing_screen/widgets/side_nav_item.dart';
 import 'package:shield_gpt/dashboard_landing_screen/widgets/table_cell_widget.dart';
 import 'package:shield_gpt/dashboard_landing_screen/widgets/table_row_full_widget.dart';
 import 'package:shield_gpt/initial_file_upload_screen/model/file_model.dart';
-import 'package:shield_gpt/initial_file_upload_screen/widget/file_upload_container.dart';
 
 class DashboardLandingScreen extends StatelessWidget {
   const DashboardLandingScreen({super.key});
