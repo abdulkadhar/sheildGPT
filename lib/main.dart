@@ -5,6 +5,7 @@ import 'package:shield_gpt/global_controller/app_scroll_behaviour.dart';
 import 'package:shield_gpt/initial_file_upload_screen/controller/initial_file_upload_screen_controller.dart';
 import 'package:shield_gpt/loader_screen/view/loader_screen.dart';
 import 'package:shield_gpt/login_screen/controller/login_screen_controller.dart';
+import 'package:shield_gpt/stats_screen/view/stats_screen.dart';
 
 void main() {
   runApp(
@@ -31,7 +32,7 @@ class ShieldGPTApp extends StatelessWidget {
       title: 'Shield GPT',
       // TODO uncomment this after the refinement
       // home: const LoginScreen(),
-      home: const DashboardLandingScreen(),
+      home: const StatsScreen(),
     );
   }
 }
